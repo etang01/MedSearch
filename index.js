@@ -52,7 +52,8 @@ function compareSecondColumn(a, b) {
       return (a[1] > b[1]) ? -1 : 1;
   }
 }
-function findMatchingDiseases(symptomInput){
+
+function findMatchingDiseases(){
 var diseaseList = [ ['Fungal infection','itching skin_rash nodal_skin_eruptions dischromic _patches']
 ,['Allergy', 'continuous_sneezing shivering chills watering_from_eyes']
 ,['GERD', 'stomach_pain acidity ulcers_on_tongue vomiting cough chest_pain']
@@ -159,7 +160,4 @@ for(j=0;j<sympList.length; j++)
   document.getElementById("demo").innerHTML=diseaseWeight;
 }
 
-function btnTest()
-{
-  alert(getSelectedCheckboxValues('symptomInput'));
-}
+
