@@ -1,85 +1,211 @@
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
 body {
-    /* Old browsers */
-    background: #141E30;
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(-45deg, #35577D, #141E30);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(-45deg, #35577D, #141E30);
-    margin: 0;
-    padding: 0;
-  }
-  
-  h1 {
-    color: #FFF;
-    font-size: 2em;
-    padding-top: 100px;
-    width: 100%;
-    font-family: Georgia;
-    text-align: center;
-  }
-  
-  h2 {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-    color: rgba(255, 255, 255, 0.5);
-    font-weight: 100;
-    font-size: 22px;
-    line-height: 24px;
-    padding-bottom: 30px;
-    text-align: left;
-    width: 70%;
-    font-family: Georgia;
-  }
-  
-  p {
-    color: AliceBlue;
-    line-height: 1.3em;
-    text-align: left;
-    width: 100%;
-    font-family: Helvetica;
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .byline {
-    font-family: Helvetica;
-    color: rgba(255, 255, 255, 0.5);
-    float: left;
-    font-size: 14px;
-    padding-left: 10px;
-    text-transform: uppercase;
-  }
-  
-  .caption {
-    display: block;
-    font-family: 'Playfair Display', serif;
-    font-size: 14px;
-    font-style: italic;
-    line-height: 14px;
-    margin-left: 20px;
-    padding: 10px;
-    position: relative;
-    top: 80%;
-    width: 60%;
-    color: black;
-    background-color: white;
-  }
-  
-  .content {
-    padding: 40px;
-  }
-  
-  .image {
-    background-image: url("https://www.wallpaperup.com/uploads/wallpapers/2016/08/08/1004971/dd55f3d04a33451924bfacac60fad668-1000.jpg");
-    background-size: cover;
-    background-position: center;
-    height: 300px;
-  }
-  
-  .writer-img {
-    -webkit-box-shadow: 5px 0px 5px 0px rgba(0, 0, 50, 0.97);
-    -moz-box-shadow: 5px 0px 5px 0px rgba(0, 0, 50, 0.97);
-    box-shadow: 5px 0px 5px 0px rgba(0, 0, 50, 0.97);
-    float: left;
-    width: 50px;
-  }
-  
+  background-color: #E7EDFD;
+  font-family: 'Assistant', sans-serif;
+  font-weight: 200;
+  font-size: 25px;
+  text-align: center;
+  margin: auto;
+  margin-top: 11%;
+}
+
+h1 {
+  text-align: center;
+  margin: 5%;
+}
+
+
+button {
+  font-family: 'Assistant', sans-serif;
+  font-weight: 300;
+  border: none;
+  border-radius: 10px;
+  background-color: white;
+  font-size: 30px;
+  padding: 10px;
+  display: inline-block;
+  width: 130px;
+  margin: 8%;
+  margin-top: 2%;
+}
+
+button:hover {
+  background-color: #C4C7FB;
+}
+
+a {
+  font-size: 35px;
+  color: #A3A6FF;
+}
+
+a:hover {
+  color: pink;
+}
+
+.longline {
+  margin-left: 12%;
+  margin-right: 12%;
+}
+
+.ombre {
+    background: linear-gradient(to bottom, #DFE0FF 1%, #FFFAE1 30%);
+    height: 235em;
+}
+
+.start {
+  width: auto;
+}
+
+#symptoms {
+  padding-top: 2%;
+  margin-top: 15%
+}
+
+.fa-chevron-down {
+  margin-top: 4%;
+}
+
+.searchicon {
+  height: 3em;
+  margin-right: 1em;
+}
+
+#myInput {
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 40%; /* Full-width */
+  font-size: 1.5em; /* Increase font-size */
+  padding: .5em; /* Add some padding */
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 2%; /* Add some space below the input */
+}
+
+.submit {
+  width: auto;
+  font-size: 0.5em;
+  margin: auto;
+  margin-left: 1em;
+  padding: auto;
+  background-color: #C4C7FB;
+}
+
+.submit:hover {
+  background-color: white;
+}
+
+#myUL {
+  /* Remove default list styling */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd; /* Add a border to all links */
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6; /* Grey background color */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove default text underline */
+  font-size: 18px; /* Increase the font-size */
+  color: black; /* Add a black text color */
+  display: block; /* Make it into a block element to fill the whole list */
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee; /* Add a hover effect to all links, except for headers */
+}

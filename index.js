@@ -186,63 +186,78 @@ function getDiseases(){
 }
 
 
-
-function buttonGenerate(inputVar){ 
-  var resultLinks = [
-    ['Fungal infection',"fungalinfection.html"],
-    ['Allergy',"allergy.html"],
-    ['GERD',"gerd.html"],
-    ['Chronic cholestasis',"chronic_cholestasis.html"],
-    ['Drug Reaction',"drug.html"],
-    ['Peptic ulcer diseae',"peptic.html"],
-    ['AIDS',"aids.html"],
-    ['Diabetes',"diabetes.html"],
-    ['Gastroenteritis',"gastroenteritis.html"],
-    ['Bronchial Asthma',"bronchial_asthma.html"],
-    ['Hypertension',"hypertension.html"],
-    ['Migraine',"migraine.html"],
-    ['Cervical spondylosis',"cervical_spondylosis.html"],
-    ['Paralysis (brain hemorrhage)',"paralysis.html"],
-    ['Jaundice',"jaundice.html"],
-    ['Malaria',"malaria.html"],
-    ['Chicken pox',"chickenpox.html"],
-    ['Dengue',"dengue.html"],
-    ['Typhoid',"typhoid.html"],
-    ['Hepatitis A',"hepatitisA.html"],
-    ['Hepatitis B',"hepatitisB.html"],
-    ['Hepatitis C',"hepatitisC.html"],
-    ['Hepatitis D',"hepatitisD.html"],
-    ['Hepatitis E',"hepatitisE.html"],
-    ['Alcoholic hepatitis',"alcoholic_hepatitis.html"],
-    ['Tuberculosis',"tuberculosis.html"],
-    ['Common Cold',"commoncold.html"],
-    ['Pneumonia',"pneumonia.html"],
-    ['Dimorphic hemmorhoids(piles)',"dimorphic_hemmorhoids.html"],
-    ['Heart attack',"heart_attack.html"],
-    ['Varicose veins',"varicose_veins.html"],
-    ['Hypothyroidism',"hypoglycemia.html"],
-    ['Hyperthyroidism',"hyperthyroidism.html"],
-    ['Hypoglycemia',"hypoglycemia.html"],
-    ['Osteoarthristis',"osteoarthristis.html"],
-    ['Arthritis',"arthritis.html"],
-    ['(vertigo) Paroymsal  Positional Vertigo',"vertigo.html"],
-    ['Acne',"acne.html"],
-    ['Urinary tract infection',"uti.html"],
-    ['Psoriasis',"psoriasis.html"],
-    ['Impetigo',"impetigo.html"],
-    ['COVID-19',0]
-  ];
+var outputLinks = [];
+var curSlide = 0;
+var resultLinks = [
+  ['Fungal infection',"fungalinfection.html"],
+  ['Allergy',"allergy.html"],
+  ['GERD',"gerd.html"],
+  ['Chronic cholestasis',"chronic_cholestasis.html"],
+  ['Drug Reaction',"drug.html"],
+  ['Peptic ulcer diseae',"peptic.html"],
+  ['AIDS',"aids.html"],
+  ['Diabetes',"diabetes.html"],
+  ['Gastroenteritis',"gastroenteritis.html"],
+  ['Bronchial Asthma',"bronchial_asthma.html"],
+  ['Hypertension',"hypertension.html"],
+  ['Migraine',"migraine.html"],
+  ['Cervical spondylosis',"cervical_spondylosis.html"],
+  ['Paralysis (brain hemorrhage)',"paralysis.html"],
+  ['Jaundice',"jaundice.html"],
+  ['Malaria',"malaria.html"],
+  ['Chicken pox',"chickenpox.html"],
+  ['Dengue',"dengue.html"],
+  ['Typhoid',"typhoid.html"],
+  ['Hepatitis A',"hepatitisA.html"],
+  ['Hepatitis B',"hepatitisB.html"],
+  ['Hepatitis C',"hepatitisC.html"],
+  ['Hepatitis D',"hepatitisD.html"],
+  ['Hepatitis E',"hepatitisE.html"],
+  ['Alcoholic hepatitis',"alcoholic_hepatitis.html"],
+  ['Tuberculosis',"tuberculosis.html"],
+  ['Common Cold',"commoncold.html"],
+  ['Pneumonia',"pneumonia.html"],
+  ['Dimorphic hemmorhoids(piles)',"dimorphic_hemmorhoids.html"],
+  ['Heart attack',"heart_attack.html"],
+  ['Varicose veins',"varicose_veins.html"],
+  ['Hypothyroidism',"hypoglycemia.html"],
+  ['Hyperthyroidism',"hyperthyroidism.html"],
+  ['Hypoglycemia',"hypoglycemia.html"],
+  ['Osteoarthristis',"osteoarthristis.html"],
+  ['Arthritis',"arthritis.html"],
+  ['(vertigo) Paroymsal  Positional Vertigo',"vertigo.html"],
+  ['Acne',"acne.html"],
+  ['Urinary tract infection',"uti.html"],
+  ['Psoriasis',"psoriasis.html"],
+  ['Impetigo',"impetigo.html"],
+  ['COVID-19',0]
+];
+function buttonGenerate(inputVar, resultLinks){ 
   var potentialPositives = inputVar.split(',');
   potentialPositives.pop();
-  alert(potentialPositives)
-  var outputLinks=[];
-  for (i=0; i<[potentialPositives].length; i++)
+  //alert(potentialPositives)
+  var docFrag = document.createDocumentFragment();
+  for (i=0; i<potentialPositives.length; i++)
   {
     for(j=0; j<resultLinks.length; j++)
     {
-      if (potentialPositives[i]==resultLinks[j][0])
+      if(potentialPositives[i]==resultLinks[j][0])
       {
-        
+        outputLinks [i] = resultLinks[j][1];
       }
     }
+    //console.log(outputLinks,i,potentialPositives,j)
+    var elem = document.createElement('a');
+    elem.href = outputLinks[i];
+    elem.innerText = potentialPositives[i];
+    docFrag.appendChild(elem);
   }
+  document.body.appendChild(docFrag);
+  //alert(outputLinks);
+}
+
+/*
+function bonobo(num)
+{
+  alert(num);
+}*/
