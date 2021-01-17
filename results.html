@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <titl>title</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <p id="res"></p>
+  </body>
+  <script>
+    //var res = document.cookie;
+    var res = localStorage.getItem("rests")
+    alert(res);
+    //document.getElementById("res").innerHTML = res;
+    buttonGenerate(res);
+    </script>
+</html>
