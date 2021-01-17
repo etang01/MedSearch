@@ -19,6 +19,7 @@ function myFunction() {
   }
 }
 
+//bool value to check if there are no more than 3 symptoms selected, else complain
 function ValidateSymptomSelection()
 {
     var checkboxes = document.getElementsByClassName("single-checkbox");
@@ -35,6 +36,7 @@ function ValidateSymptomSelection()
     }
 }
 
+//pass values from checkbox to an array for the search
 function getSelectedCheckboxValues(name) {
   const checkboxes = document.querySelectorAll(`input[name="${name}"]:checked`);
   let values = [];
@@ -44,6 +46,7 @@ function getSelectedCheckboxValues(name) {
   return values;
 }
 
+//reorder the list after the search to give most relevant results
 function compareSecondColumn(a, b) {
   if (a[1] === b[1]) {
       return 0;
@@ -53,11 +56,13 @@ function compareSecondColumn(a, b) {
   }
 }
 
+//get array from checkboxes as an array 
 function getSymptoms(){
   var sympList=getSelectedCheckboxValues('symptomInput');
   return sympList;
 }
 
+//search for potential matching diseases given symptom input
 function findMatchingDiseases(sympList){
 var diseaseList = [ ['Fungal infection','itching skin_rash nodal_skin_eruptions dischromic _patches']
 ,['Allergy', 'continuous_sneezing shivering chills watering_from_eyes']
@@ -146,6 +151,11 @@ var diseaseWeight = [
   ['Impetigo',0],
   ['COVID-19',0]
 ];
+if (sympList.length < 1)//catch, don't continue if no user selection
+{
+  alert('Please choose at least one symptom');
+  return;
+}
 
 for(j=0;j<sympList.length; j++)
 {
@@ -169,20 +179,21 @@ diseaseWeight.sort(compareSecondColumn);
       outputStr +=diseaseWeight[i][0];
       outputStr +=',';
     }
-    else
-    {
-      window.location.replace("https://boringboringboring.com/");
-    }
   }
   return outputStr;
 }
 
-
+//compile results and store it for access later
 function getDiseases(){
   var sympList = getSymptoms();
   var potentialDisease = findMatchingDiseases(sympList);
-  localStorage.setItem("rests", potentialDisease);
-  window.location.replace("results.html");
+  if(sympList.length<1)//catch, don't move onto next page if no input
+  {
+  }
+  else{
+    localStorage.setItem("rests", potentialDisease);
+    window.location.replace("results.html");
+  }
 }
 
 
@@ -232,6 +243,7 @@ var resultLinks = [
   ['Impetigo',"impetigo.html"],
   ['COVID-19',"covid.html"]
 ];
+//dynamically generate result buttons and assign corresponding destinations
 function buttonGenerate(inputVar, resultLinks){ 
   var potentialPositives = inputVar.split(',');
   potentialPositives.pop();
@@ -251,6 +263,8 @@ function buttonGenerate(inputVar, resultLinks){
     elem.href = outputLinks[i];
     elem.innerText = potentialPositives[i];
     docFrag.appendChild(elem);
+    var newLine = document.createElement('p');
+    docFrag.appendChild(newLine);
   }
   document.body.appendChild(docFrag);
   //alert(outputLinks);
