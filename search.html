@@ -1,0 +1,562 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Search Symptoms</title>
+    <script src="https://kit.fontawesome.com/c8b84544a4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300&display=swap" rel="stylesheet">
+  </head>
+
+  <body class="ombre">
+
+    <h1>We're sorry to hear that</h1>
+    <h1 class="longline">Let us know your symptoms below and we will provide you with an unofficial diagnosis</h1>
+
+    <a href="#symptoms"><button type="button" class="start">Let's start!</button></a>
+
+    <p></p>
+
+    <i class="fas fa-chevron-down"></i>
+
+
+    <div id='symptoms'>
+      <h1>Symptoms Search</h1>
+
+      <h4>Choose up to 3 symptoms</h4>
+
+      <img class="searchicon" src="loupe.png">
+
+      <input type="text" id="myInput" onkeyup="myFunction()">
+
+      <a href=""><button type="button" class="submit">Submit</button></a>
+
+      <ul id="myUL">
+        <li>
+          <input class="single-checkbox" type="checkbox" name="abdominal pain" onclick="return ValidateSymptomSelection();">
+          <label for="abdominal pain">abdominal pain</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" name="abnormal menstruation" onclick="return ValidateSymptomSelection();">
+          <label for="abnormal menstruation">abnormal menstruation</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" name="acidity" onclick="return ValidateSymptomSelection();">
+          <label for="acidity">acidity</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" name="acute liver failure" onclick="return ValidateSymptomSelection();">
+          <label for="acute liver failure">acute liver failure</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" name="altered sensorium" onclick="return ValidateSymptomSelection();">
+          <label for="altered sensorium">altered sensorium</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" name="anxiety" onclick="return ValidateSymptomSelection();">
+          <label for="anxiety">anxiety</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" name="back pain" onclick="return ValidateSymptomSelection();">
+          <label for="back pain">back pain</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" name="belly pain" onclick="return ValidateSymptomSelection();">
+          <label for="belly pain">belly pain</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" name="blackheads" onclick="return ValidateSymptomSelection();">
+          <label for="blackheads">blackheads</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" name="bladder discomfort" onclick="return ValidateSymptomSelection();">
+          <label for="bladder discomfort">bladder discomfort</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" name="blister">
+          <label for="blister">blister</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" name="blood in sputum" onclick="return ValidateSymptomSelection();">
+          <label for="blood in sputum">blood in sputum</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" name="bloody stool" onclick="return ValidateSymptomSelection();">
+          <label for="bloody stool">bloody stool</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" name="blurred and distorted vision" onclick="return ValidateSymptomSelection();">
+          <label for="blurred and distorted vision">blurred and distorted vision</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" name="breathlessness" onclick="return ValidateSymptomSelection();">
+          <label for="breathlessness">breathlessness</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" name="brittle nails" onclick="return ValidateSymptomSelection();">
+          <label for="brittle nails">brittle nails</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" name="bruising" onclick="return ValidateSymptomSelection();">
+          <label for="bruising">bruising</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" name="burning micturition" onclick="return ValidateSymptomSelection();">
+          <label for="burning micturition">burning micturition</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" name="chest pain" onclick="return ValidateSymptomSelection();">
+          <label for="chest pain">chest pain</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" name"chills" onclick="return ValidateSymptomSelection();">
+          <label for="chills">chills</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" name="cold hands and feets" onclick="return ValidateSymptomSelection();">
+          <label for="cold hands and feets">cold hands and feets</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" name="coma" onclick="return ValidateSymptomSelection();">
+          <label for="coma">coma</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" name="congestion" onclick="return ValidateSymptomSelection();">
+          <label for="congestion">congestion</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" name="constipation" onclick="return ValidateSymptomSelection();">
+          <label for="constipation">constipation</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" name="continuous feel of urine" onclick="return ValidateSymptomSelection();">
+          <label for="continuous feel of urine">continuous feel of urine</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="continuous sneezing">continuous sneezing</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="cough">cough</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="cramps">cramps</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="dark urine">dark urine</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="dehydration">dehydration</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="depression">depression</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="diarrhea">diarrhea</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="dischromic patches">dischromic patches</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="distention of abdomen">distention of abdomen</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="dizziness">dizziness</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="drying and tingling lips">drying and tingling lips</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="enlarged thyroid">enlarged thyroid</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="excessive hunger">excessive hunger</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="extra marital contacts">extra marital contacts</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="family history">family history</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="fast heart rate">fast heart rate</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="fatigue">fatigue</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="fluid overload">fluid overload</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="foul smell of urine">foul smell of urine</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="high fever">high fever</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="hip joint pain">hip joint pain</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="history of alcohol consumption">history of alcohol consumption</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="increased appetite">increased appetite</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="indigestion">indigestion</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="inflammatory nails">inflammatory nails</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="internal itching">internal itching</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="irregular sugar level">irregular sugar level</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="irritability">irritability</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="irriation in anus">irration in anus</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="itching">itching</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="joint pain">joint pain</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="knee pain">knee pain</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="lack of concentration">lack of concentration</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="lethargy">lethargy</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="loss of appetite">loss of appetite</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="loss of balance">loss of balance</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="loss of smell">loss of smell</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="malaise">malaise</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="mild fever">mild fever</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="mood swings">mood swings</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="movement stiffness">movement stiffness</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="mucoid sputum">mucoid sputum</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="muscle pain">muscle pain</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="muscle wasting">muscle wasting</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="muscle weakness">muscle weakness</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="nausea">nausea</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="neck pain">neck pain</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="nodal skin eruptions">nodal skin eruptions</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="obesity">obesity</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="pain behind the eyes">pain behind the eyes</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="pain during bowel movements">pain during bowel movements</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="pain in anal region">pain in anal region</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="painful walking">painful walking</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="palpitations">palpitations</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="passage of gasses">passage of gases</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="patches in throat">patches in throat</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="phlegm">phlegm</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="polyuria">polyuria</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="prognosis">prognosis</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="prominent veins on calf">prominent veins on calf</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="puffy face and eyes">puffy face and eyes</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="pus filled pimples">pus filled pimples</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="receiving blood tranfusion">receiving blood tranfusion</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="receiving unsterile injections">receiving unsterile injections</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="red sore around nose">red sore around nose</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="red spots over body">red spots over body</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="restlessness">redness of eyes</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="runny nose">runny nose</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="rusty sputum">rusty sputum</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="scurring">scurring</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="shivering">shivering</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="silver like dusting">silver like dusting</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="sinus pressure">sinus pressure</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="skin peeling">skin peeling</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="skin rash">skin rash</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="slurred speech">slurred speech</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="small dents in nails">small dents in nails</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="spinning movements">spinning movements</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="spotting urination">spotting urination</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="stiff neck">stiff neck</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="stomach bleeding">stomach bleeding</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="stomach pain">stomach pain</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="sunken eyes">sunken eyes</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="sweating">sweating</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="swelled lymph nodes">swelled lymph nodes</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="swelling joints">swelling joints</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="swelling of stomach">swelling of stomach</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="swollen blood vessels">swollen blood vessels</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="swollen extremeties">swollen extremeties</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="swollen legs">swollen legs</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="throat irritation">throat irritation</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="toxic look">toxic look (typhos)</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="ulcers on tongue">ulcers on tongue</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="malaise">unsteadiness</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="visual disturbances">visual disturbances</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="vomiting">vomiting</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="watering from eyes">watering from eyes</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="weakness in limbs">weakness in limbs</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="weakness of one body side">weakness of one body side</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="weight gain">weight gain</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="weight loss">weight loss</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="yellow crust ooze">yellow crust ooze</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="yellow urine">yellow urine</label>
+        </li>
+        <li>
+          <input class="single-checkbox" type="checkbox" onclick="return ValidateSymptomSelection();">
+          <label for="yellowish skin">yellowish skin</label>
+        </li>
+
+      </ul>
+
+
+    </div>
+
+    <script src="index.js" charset="utf-8"></script>
+
+  </body>
+
+
+</html>
