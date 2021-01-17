@@ -230,7 +230,7 @@ var resultLinks = [
   ['Urinary tract infection',"uti.html"],
   ['Psoriasis',"psoriasis.html"],
   ['Impetigo',"impetigo.html"],
-  ['COVID-19',0]
+  ['COVID-19',"covid.html"]
 ];
 function buttonGenerate(inputVar, resultLinks){ 
   var potentialPositives = inputVar.split(',');
