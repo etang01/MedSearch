@@ -13,6 +13,9 @@ h1 {
   margin: 5%;
 }
 
+h2 {
+  margin-bottom: 0;
+}
 
 button {
   font-family: 'Assistant', sans-serif;
@@ -39,6 +42,24 @@ a {
 
 a:hover {
   color: pink;
+}
+
+.returndiseases {
+  width: auto;
+  margin: 0.5em;
+}
+
+.lonelycontainer {
+  margin: 0;
+  margin-top: 1em;
+}
+
+.lonely {
+  margin: 1em;
+}
+
+.diseases {
+  margin: 0;
 }
 
 .longline {
