@@ -35,6 +35,15 @@ function ValidateSymptomSelection()
     }
 }
 
+function getSelectedCheckboxValues(name) {
+  const checkboxes = document.querySelectorAll(`input[name="${name}"]:checked`);
+  let values = [];
+  checkboxes.forEach((checkbox) => {
+      values.push(checkbox.value);
+  });
+  return values;
+}
+
 function compareSecondColumn(a, b) {
   if (a[1] === b[1]) {
       return 0;
@@ -43,7 +52,7 @@ function compareSecondColumn(a, b) {
       return (a[1] > b[1]) ? -1 : 1;
   }
 }
-function myFunction(){
+function findMatchingDiseases(symptomInput){
 var diseaseList = [ ['Fungal infection','itching skin_rash nodal_skin_eruptions dischromic _patches']
 ,['Allergy', 'continuous_sneezing shivering chills watering_from_eyes']
 ,['GERD', 'stomach_pain acidity ulcers_on_tongue vomiting cough chest_pain']
@@ -82,7 +91,7 @@ var diseaseList = [ ['Fungal infection','itching skin_rash nodal_skin_eruptions 
 ,['Arthritis','muscle_weakness stiff_neck swelling_joints movement_stiffness painful_walking']
 ,['(vertigo) Paroymsal  Positional Vertigo','vomiting headache nausea spinning_movements loss_of_balance unsteadiness']
 ,['Acne', 'skin_rash pus_filled_pimples blackheads scurring']
-,['Urinary tract infection', 'burning_micturition bladder_discomfort foul_smell_of urine continuous_feel_of_urine']
+,['Urinary tract infection', 'burning_micturition bladder_discomfort foul_smell_of_urine continuous_feel_of_urine']
 ,['Psoriasis','skin_rash joint_pain skin_peeling silver_like_dusting small_dents_in_nails inflammatory_nails']
 ,['Impetigo', 'skin_rash high_fever blister red_sore_around_nose yellow_crust_ooze']
 ,['COVID-19', 'headache cough breathlessness chills fatigue vomiting throat_irritation muscle_pain congestion diarrhea runny_nose loss_of_smell']
@@ -131,6 +140,9 @@ var diseaseWeight = [
   ['Impetigo',0],
   ['COVID-19',0]
 ];
+inputStr=getSelectedCheckboxValues('symptomInput');
+sympList=new Array();
+sympList = inputStr.split(",");
 for(j=0;j<sympList.length; j++)
 {
   symptom=sympList[j];
@@ -145,4 +157,9 @@ for(j=0;j<sympList.length; j++)
 }
   diseaseWeight.sort(compareSecondColumn);
   document.getElementById("demo").innerHTML=diseaseWeight;
+}
+
+function btnTest()
+{
+  alert(getSelectedCheckboxValues('symptomInput'));
 }
