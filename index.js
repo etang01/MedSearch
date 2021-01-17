@@ -53,7 +53,12 @@ function compareSecondColumn(a, b) {
   }
 }
 
-function findMatchingDiseases(){
+function getSymptoms(){
+  var sympList=getSelectedCheckboxValues('symptomInput');
+  return sympList;
+}
+
+function findMatchingDiseases(sympList){
 var diseaseList = [ ['Fungal infection','itching skin_rash nodal_skin_eruptions dischromic _patches']
 ,['Allergy', 'continuous_sneezing shivering chills watering_from_eyes']
 ,['GERD', 'stomach_pain acidity ulcers_on_tongue vomiting cough chest_pain']
@@ -141,9 +146,7 @@ var diseaseWeight = [
   ['Impetigo',0],
   ['COVID-19',0]
 ];
-inputStr=getSelectedCheckboxValues('symptomInput');
-sympList=new Array();
-sympList = inputStr.split(",");
+
 for(j=0;j<sympList.length; j++)
 {
   symptom=sympList[j];
@@ -156,8 +159,24 @@ for(j=0;j<sympList.length; j++)
       }
   }
 }
-  diseaseWeight.sort(compareSecondColumn);
-  document.getElementById("demo").innerHTML=diseaseWeight;
+diseaseWeight.sort(compareSecondColumn);
+  //document.getElementById("demo").innerHTML=diseaseWeight;
+  var outputStr='';
+  for(i=0;i<5;i++)
+  {
+    if (diseaseWeight[i][1]>=1)
+    {
+      outputStr +=diseaseWeight[i][0];
+      outputStr +=',';
+    }
+    else{
+      window.location.replace("https://boringboringboring.com/");
+    }
+  }
+  return outputStr;
 }
 
-
+function getDiseases(){
+  var sympList = getSymptoms();
+  alert(findMatchingDiseases(sympList));
+}
