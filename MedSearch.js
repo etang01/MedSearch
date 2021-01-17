@@ -31,7 +31,7 @@ var diseaseList = [ ['Fungal infection','itching skin_rash nodal_skin_eruptions 
  ,['Varicose veins','fatigue cramps	bruising obesity swollen_legs swollen_blood_vessels prominent_veins_on_calf']
  ,['Hypothyroidism','fatigue weight_gain cold_hands_and_feets mood_swings lethargy dizziness puffy_face_and_eyes enlarged_thyroid brittle_nails swollen_extremeties depression irritability abnormal_menstruation']
  ,['Hyperthyroidism','fatigue mood_swings weight_loss restlessness sweating diarrhoea fast_heart_rate excessive_hunger muscle_weakness irritability abnormal_menstruation']
- ,['Hypoglycemia','vomiting fatigue anxiety sweating headache nausea blurred_and_distorted_vision excessive_hunger drying_and_tingling_lips slurred_speech irritability	palpitations]
+ ,['Hypoglycemia','vomiting fatigue anxiety sweating headache nausea blurred_and_distorted_vision excessive_hunger drying_and_tingling_lips slurred_speech irritability	palpitations']
  ,['Osteoarthristis', 'joint_pain neck_pain knee_pain hip_joint_pain swelling_joints painful_walking']
  ,['Arthritis','muscle_weakness stiff_neck swelling_joints movement_stiffness painful_walking']
  ,['(vertigo) Paroymsal  Positional Vertigo','vomiting headache nausea spinning_movements loss_of_balance unsteadiness']
@@ -83,7 +83,7 @@ var diseaseWeight = [
     ['Impetigo',0]
 ];
 //for each symptom in symptomList:
-    for(int i=0; i<diseaseList.GetLength(0); i++)
+    for(i=0; i<diseaseList.GetLength(0); i++)
     {
         sympArray=diseaseList[i,1];
         if(sympArray.includes(symptom))
